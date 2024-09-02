@@ -3,25 +3,6 @@
 @import url(colorfonts.css);
 /* CSS Document */
 
-/* CSS Document */
-/* Padrões de Fontes no projeto
-// Títulos: ;
-// Citações: 
-// Texto: 'Arial' ;
-// Ordinal / químico: 'Calibri' ;
-*/
-
-@font-face {
-    font-family: 'Courier Prime';
-    font-style: normal;
-    font-weight: 300;
-    src: url(../fonts/CourierPrime-Regular.otf) format("opentype"),
-        url(../fonts/CourierPrime-Regular.ttf) format("truetype"),
-        url(../fonts/CourierPrime-Regular.woff2) format("woff2"),
-        url(../fonts/CourierPrime-Regular.woff) format("woff");
-    font-display: swap;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -173,15 +154,15 @@ a.d3hyperlinkoed:hover {
 }
 
 /* Alinhamento vertical */
-.colTop {
+.coltop {
     align-items: flex-start;
 }
 
-.colCenter {
+.colcenter {
     align-items: center;
 }
 
-.colBottom {
+.colbottom {
     align-items: flex-end;
 }
 
@@ -197,7 +178,7 @@ a.d3hyperlinkoed:hover {
 }
 
 .d3instrucaooed {
-    font-family: 'Courier Prime';
+    font-family: var(--oedinstrucao);
     padding: 1em;
     font-size: 0.9em;
     line-height: 1.1em;
@@ -205,29 +186,17 @@ a.d3hyperlinkoed:hover {
 }
 
 .d3tit1oed {
+    background: var(--fiscor1C);
     font-family: var(--titulo);
     font-size: var(--peso2);
-    font-size: 2.1em;
-    color: var(--preto);
-    text-align: left;
-    border: 1px solid #f7f7f7;
-    border-radius: 0.5em 0.5em 0 0;
-    padding: 0.5em 1em;
-    width: max-content;
-    background: #f7f7f7;
     line-height: 1em;
-
+    text-align: center;
+    color: var(--preto);
+    width: max-content;
+    padding: 0.5em 1em;
+    clip-path: polygon(0 0.75em,0.75em 0,calc(100% - 0.75em) 0,100% 0.75em,100% 100%,0 100%);
 }
-/*👉.d3tit1oed::before{
-    content: '';
-    background: url(../images/pv_oed_bg.svg) top left no-repeat;
-    background-size: 100%;
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    margin: -50px 0 0 -66px;
-    z-index: -10;
-}👈*/
+
 
 .d3tit2oed {
     font-size: 1.3em;
@@ -264,10 +233,13 @@ a.d3hyperlinkoed:hover {
 }
 
 .d3conteudooed {
-    /*👉 border: 1px solid #e2e2e2;👈*/
     padding: 1em 2em;
-    background: #f7f7f7;
-    border-radius: 0 2em 0 0;
+    background:
+    url(../images/bg_canto2.svg) top right no-repeat,
+    url(../images/bg_canto3.svg) bottom right no-repeat,
+    url(../images/bg_canto4.svg) bottom left no-repeat
+    var(--apoio1B);
+    
 }
 
 .panorama {}
@@ -296,12 +268,11 @@ a.d3hyperlinkoed:hover {
 
 .d3descricaolongaoed {
     border: 1px;
-    border-style: dashed;
     padding: 0.5em;
     margin: 0 0 0.5em 0;
-    color: #174526;
-    background: var(--verde3);
-
+    background: var(--branco);
+    box-shadow: 
+    5px 5px 0 0 var(--apoio1B);
 }
 
 .d3descricaolongaoed summary {
@@ -311,17 +282,17 @@ a.d3hyperlinkoed:hover {
 }
 
 .d3descricaolongaoed summary:hover {
-    background-color: #bedfee;
+    background-color: var(--apoio1Afnd);
 }
 
 /*👉Versão geral👈*/
 .d3descricaolongaoed summary::before {
     background: url(../images/ico_acessibilidade.svg);
     background-size: 100%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     position: absolute;
-    margin: -3px 0 0 -48px;
+    margin: 0 0 0 -48px;
     content: '';
 }
 
@@ -349,13 +320,10 @@ a.d3hyperlinkoed:hover {
 }
 
 .d3btnvoltaroed a {
-    border: 1px solid var(--vermalho1);
-    border-radius: 0.5em;
-    box-shadow: 4px 4px 4px rgba(182, 181, 181, 0.2);
+    box-shadow: 4px 4px 4px rgba(182, 181, 181, 0.5);
     padding: 0.5em 1em;
-    background:var(--cinza);
-    color: var(--pre
-    );
+    background: var(--fiscor1C);
+    color: var(--preto);
     font-weight: bold;
     font-family: var(--titulo);
 }
@@ -366,7 +334,7 @@ a.d3hyperlinkoed:hover {
     animation: 3s ease-in-out;
     animation-delay: 1000ms;
     color: var(--preto);
-    background: #f7f7f7;
+    background: var(--fiscor2C);
 
 }
 
